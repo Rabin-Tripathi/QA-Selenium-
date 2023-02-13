@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -5,10 +6,11 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
-driver.get("https://demo.nopcommerce.com/")
+driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+driver.maximize_window()
 
-print(driver.title)         # Gives title of the Page
-print(driver.current_url)   # Gives the URL
-print(driver.page_source)   # To capture the source code of Page
+driver.find_element(By.LINK_TEXT, "OrangeHRM, Inc").click()  # It will perform the click action in the link
 
-driver.close()
+time.sleep(5)
+
+driver.quit()

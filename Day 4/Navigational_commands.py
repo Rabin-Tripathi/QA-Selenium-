@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
@@ -5,10 +6,17 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
-driver.get("https://demo.nopcommerce.com/")
+driver.get("https://www.nopcommerce.com/en")
+driver.get("https://www.orangehrm.com/")
 
-print(driver.title)         # Gives title of the Page
-print(driver.current_url)   # Gives the URL
-print(driver.page_source)   # To capture the source code of Page
+driver.back()   # nopcommerce
+driver.forward()    # orangehrm
+driver.refresh()
 
-driver.close()
+driver.maximize_window()
+
+# Navigational Commands are : -
+# back(), forward(), and refresh()
+
+driver.quit()
+
