@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 
-driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+driver.get("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers")
 driver.maximize_window()
 
 # Login
