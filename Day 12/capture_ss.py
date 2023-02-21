@@ -4,15 +4,19 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service as ChromeService
 from webdriver_manager.chrome import ChromeDriverManager
+import os
 
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+driver.implicitly_wait(4)
 
-# driver.get("https://www.foundit.in/")
-driver.get("https://demo.automationtesting.in/Register.html")
+driver.get("https://www.dummyticket.com/dummy-ticket-for-visa-application/")
 driver.maximize_window()
 
-# driver.find_element(By.XPATH, "//div[@class='heroSection-buttonContainer_secondaryBtn secondaryBtn']").click()
-driver.find_element(By.XPATH, "//input[@id='imagesrc']").send_keys("C:/Users/rabin/Downloads/files_example_CSV_5000(3).pdf")
+#### Methods for taking the screenshots by automation scripts
+
+# driver.save_screenshot("F:/Study/QA/python Selenium/Project1/Day 12/homepage.png")
+# driver.save_screenshot(os.getcwd()+"//homepage.png")
+driver.get_screenshot_as_file(os.getcwd()+"//ticket.png")
 
 
 time.sleep(3)
